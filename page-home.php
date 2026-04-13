@@ -99,63 +99,44 @@ get_header(); ?>
 
 <section class="blog">
 
-    <!-- Kort 1 -->
-    <article class="card">
-        <figure class="card__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/article-1.jpg" alt="Cross-section of iBearWatch">
+    <?php
 
-        </figure>
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3
+    );
 
-        <div class="card__content">
-            <h3 class="card__title">Layers of Technology in a Small Package</h3>
-            <p class="card__excerpt">
-                iBearWatch packs powerful features into a sleek design, giving you smart performance without the
-                bulk.
-            </p>
-            <a href="" class="button">Read more</a>
+    $query = new WP_Query($args);
 
-        </div>
+    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-    </article>
+            <!-- Kort 1 -->
+            <article class="card">
+                <figure class="card__image">
+                    <?php the_post_thumbnail('large'); ?>
 
+                </figure>
 
-    <!-- Kort 2 -->
-    <article class="card">
-        <figure class="card__image">
-            <?php the_post_thumbnail(); ?>
+                <div class="card__content">
 
-        </figure>
+                    <h3 class="card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-        <div class="card__content">
-            <h3 class="card__title">Pay Anywhere with Your Watch.</h3>
-            <p class="card__excerpt">
-                Leave your wallet behind. With iBearWatch, secure contactless payments are always just a tap away.
-            </p>
-            <a href="" class="button">Read more</a>
-
-        </div>
-
-    </article>
+                    <p class="card__excerpt">
+                        <?php the_excerpt(); ?>
+                    </p>
+                    <a href="<?php the_permalink(); ?>" class="button">Read more</a>
 
 
-    <!-- Kort 3 -->
-    <article class="card">
-        <figure class="card__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/article-3.jpg" alt="Cross-section of iBearWatch">
+                </div>
 
-        </figure>
+            </article>
 
-        <div class="card__content">
-            <h3 class="card__title">A Productive Friend on Your Wrist</h3>
-            <p class="card__excerpt">
-                Stay on top of tasks, notifications, and fitness goals with iBearWatch – your reliable companion
-                every day.
-            </p>
-            <a href="" class="button">Read more</a>
+    <?php endwhile;
+        wp_reset_postdata();
+    endif; ?>
 
-        </div>
 
-    </article>
+
 
 
 </section>
