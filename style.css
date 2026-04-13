@@ -46,6 +46,8 @@ figure {
 /* Gör att bilder inte kan vara större än sitt föräldraelement */
 img {
   max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 /* TYPOGRAFI */
@@ -646,6 +648,12 @@ button {
     padding: 2rem 3rem;
     display: flex;
     justify-content: center;
+  }
+
+  .menu {
+    .menu__list {
+      flex-direction: column;
+    }
   }
 }
 

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Theme Support
+ */
+add_theme_support('post-thumbnails');
+
+/**
  * Add styles and scripts
  */
 
@@ -19,7 +24,9 @@ add_action('wp_enqueue_scripts', 'ibearwatch_styles_and_scripts');
 function ibearwatch_register_menus()
 {
     register_nav_menus(array(
-        'main_menu' => 'Huvudmeny'
+        'main_menu' => 'Huvudmeny',
+        'footer_menu_1' => 'Sidfotsmeny 1',
+        'footer_menu_2' => 'Sidfotsmeny 2'
     ));
 }
 
