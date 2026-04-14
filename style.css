@@ -328,12 +328,43 @@ button {
   }
 }
 
+/* Page  */
+.page {
+  padding-inline: 1rem;
+
+  .page__header,
+  .page__content {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .page__image {
+    margin-bottom: 2rem;
+  }
+}
+
 /* Single */
 .single {
-  margin-top: 3rem;
+  padding-inline: 1rem;
+
+  .single__header,
+  .single__content {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .single__image {
+    margin-bottom: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .single-product {
+  margin-top: 3rem;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 3rem;

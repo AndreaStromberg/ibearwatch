@@ -3,20 +3,20 @@
 
 <main class="site-content">
 
-    <section class="page">
+    <section class="single">
 
-        <header class="page__header">
-            <h1 class="page__title"><?php the_title(); ?></h1>
+        <header class="single__header">
+            <h1 class="single__title"><?php the_title(); ?></h1>
         </header>
 
         <?php if (has_post_thumbnail()) : ?>
-            <figure class="page__image">
+            <figure class="single__image">
                 <?php the_post_thumbnail(); ?>
             </figure>
         <?php endif; ?>
 
 
-        <div class="page__content">
+        <div class="single__content">
             <?php the_content(); ?>
         </div>
 

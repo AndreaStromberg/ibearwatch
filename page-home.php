@@ -11,10 +11,8 @@ get_header(); ?>
 
 <!-- SITE INGRESS -->
 <section class="site-ingress">
-    <p>
-        <strong>iBearWatch</strong> – where bold design meets smart
-        innovation, keeping you connected, active, and ahead of time.
-    </p>
+    <?php the_field('ingress'); ?>
+
 </section>
 
 <!-- GALLERI -->
@@ -81,18 +79,24 @@ get_header(); ?>
 </section>
 
 <!-- Kampanjerbjudanderuta -->
-<section class="promotion">
-    <div class="promotion__content">
-        <h2 class="promotion__title">
-            Save 50% on selected iBearWatch colors!
-        </h2>
-        <p class="promotion__text">
-            Upgrade your style and stay connected with smart technology at half
-            the price. Limited time only – pick your shade before it’s gone!
-        </p>
-        <a href="" class="button button--inverted button--big">Buy now!</a>
-    </div>
-</section>
+<?php
+$promotion = get_field('promotion');
+if ($promotion) :
+?>
+    <section class="promotion">
+        <div class="promotion__content">
+            <h2 class="promotion__title">
+                <?php echo $promotion['rubrik']; ?>
+            </h2>
+            <p class="promotion__text">
+                <?php echo $promotion['text']; ?>
+            </p>
+            <a href="<?php echo $promotion['knapp-url'] ?>" class="button button--inverted button--big"><?php echo $promotion['knapptext']; ?></a>
+
+        </div>
+    </section>
+
+<?php endif; ?>
 </div>
 
 <!-- Blog -->
