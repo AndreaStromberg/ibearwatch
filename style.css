@@ -343,6 +343,24 @@ button {
   }
 }
 
+/* Post */
+.post {
+  .post__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .post__type {
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+}
+
 /* Single */
 .single {
   padding-inline: 1rem;
